@@ -62,13 +62,3 @@ for disease in input_map:
     y_list.append(output_map[disease])
   print("Extracting... :",disease)
 print("Completed!")
-X = np.array(x_list)
-y = np.array(y_list)
-X.shape
-# Apply data augmentation
-# Randomly flip images horizontally and vertically
-X = tf.image.random_flip_left_right(X)
-X = tf.image.random_flip_up_down(X)
-X.ndim
-#Split the data into training, validation, and test sets
-xtrain, xtest, ytrain, ytest = train_test_split(X, y, test_size=0.2, random_state=42)
